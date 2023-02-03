@@ -1,0 +1,40 @@
+<html>
+    
+<body>
+    <h1>Here are the list of Business which match your request</h1>
+    <div>
+        <p>
+
+            <% Array.from(BusinessList).forEach(element => { %>
+                <div class="card" style="position: relative;left: 41%;margin-left: 40px;;margin: 50px;;align-items: center ;background-color: #34495e;width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title" style="color: white;"><%= element.BusinessName %></h5>
+                      <h6 class="card-subtitle mb-2 text-muted" style="color: white;"><%= element.location %></h6>
+                      <p class="card-text" style=" color:white;   "><%= element.BusinessType %></p>
+                      <a href="http://localhost:8080/viewShop/<%element.id%>" class="card-link"> <button class="buttondel" data-deletereq = <%= element.id %>>Select</button>
+                      </a>
+                      <a href="https://web.whatsapp.com" class="card-link"><button class="buttondel" data-editreq="">Edit</button>
+                      </a>
+                    </div>
+                  </div>
+                <% }); %>
+        </p>
+    </div>   
+</body>
+
+<script>
+                /*let deleterequest = document.querySelectorAll('.buttondel')
+                //deleterequest.addEventListener('click',(e)=>{alert("jh")})
+                console.log(deleterequest)
+                Array.from(deleterequest).forEach((a)=>{
+                        a.addEventListener('click',(e)=>{
+                            var endpiont = `http://localhost:8080/viewShop/${a.dataset.deletereq}`
+                            console.log(endpiont)
+                             fetch(endpiont,{
+                        method:'PUT'
+                    })//.then((response)=>{console.log(response.json());})
+                    //.catch((err)=>{console.log(err)})
+                        })
+                })*/
+</script>
+</html>
